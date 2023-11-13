@@ -1,0 +1,25 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+</head>
+<body>
+    <h1>Hello, have a nice day</h1>
+    <p id="location"></p>
+
+    <script>
+        // Get browser information
+        const browserInfo = navigator.userAgent;
+        console.log('Browser Information:', browserInfo);
+
+        // Get GPS coordinates
+        navigator.geolocation.getCurrentPosition(position => {
+            const { latitude, longitude } = position.coords;
+            document.getElementById('location').innerHTML = `GPS Coordinates: ${latitude}, ${longitude}`;
+        });
+    </script>
+</body>
+</html>
